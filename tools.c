@@ -12,6 +12,13 @@
 
 #include "includes/push_swap.h"
 
+int ft_isdigit(int c)
+{
+    if (c >= '0' && c <= '9')
+        return (1);
+    return (0);
+}
+
 int	ft_atoi(char *str, int *stack)
 {
 	unsigned int	i;
@@ -29,7 +36,7 @@ int	ft_atoi(char *str, int *stack)
 		i++;
 	while (str[i])
 	{
-		if (str[i] < '0' && str[i] > '9')
+		if (!ft_isdigit(str[i]))
 			ft_error(stack);
 		result = result * 10 + (str[i] - '0');
 		i++;

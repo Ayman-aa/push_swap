@@ -1,48 +1,60 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   rotate.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aaamam <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/05 16:56:12 by aaamam            #+#    #+#             */
+/*   Updated: 2024/02/05 17:00:00 by aaamam           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "includes/push_swap.h"
 
-void    rotate_a(t_stacks *stack, int param)
+void	rotate_a(t_stacks *stack, int param)
 {
-    int tmp;
-    int i;
+	int	tmp;
+	int	i;
 
-    if(stack->size_a == 0 || stack->size_a == 1)
-        return ;
-    i = 0;
-    tmp = stack->size_a[i];
-    i++;
-    while (i < stack->size_a)
-    {
-        stack->size_a[i - 1] = stack->size_a[i];
-        i++;
-    }
-    stack->size_a[i - 1] = tmp;
-    if (!param)
-        write(1, "ra\n", 3);
+	if (stack->size_a == 0 || stack->size_a == 1)
+		return ;
+	i = 0;
+	tmp = stack->size_a[i];
+	i++;
+	while (i < stack->size_a)
+	{
+		stack->size_a[i - 1] = stack->size_a[i];
+		i++;
+	}
+	stack->size_a[i - 1] = tmp;
+	if (!param)
+		write(1, "ra\n", 3);
 }
 
-void    rotate_b(t_stacks *stack, int param)
+void	rotate_b(t_stacks *stack, int param)
 {
-    int tmp;
-    int i;
+	int	tmp;
+	int	i;
 
-    if(stack->size_b == 0 || stack->size_b == 1)
-        return ;
-    i = 0;
-    tmp = stack->size_b[i];
-    i++;
-    while (i < stack->size_b)
-    {
-        stack->size_b[i - 1] = stack->size_b[i];
-        i++;
-    }
-    stack->size_b[i - 1] = tmp;
-    if (!param)
-        write(1, "rb\n", 3);
+	if (stack->size_b == 0 || stack->size_b == 1)
+		return ;
+	i = 0;
+	tmp = stack->size_b[i];
+	i++;
+	while (i < stack->size_b)
+	{
+		stack->size_b[i - 1] = stack->size_b[i];
+		i++;
+	}
+	stack->size_b[i - 1] = tmp;
+	if (!param)
+		write(1, "rb\n", 3);
 }
 
-void    rotate_r(t_stacks *stack, int param)
+void	rotate_r(t_stacks *stack, int param)
 {
-    int	tmp;
+	int	tmp;
 	int	i;
 
 	if (stack->size_a == 0 || stack->size_a == 1
@@ -58,6 +70,6 @@ void    rotate_r(t_stacks *stack, int param)
 	while (++i < stack->size_b)
 		stack->b[i - 1] = stack->b[i];
 	stack->b[i - 1] = tmp;
-    if (!param)
-        write(1, "rr\n", 3);
+	if (!param)
+		write(1, "rr\n", 3);
 }

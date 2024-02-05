@@ -6,17 +6,17 @@
 /*   By: aaamam <aaamam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 09:46:31 by aaamam            #+#    #+#             */
-/*   Updated: 2024/02/02 10:39:27 by aaamam           ###   ########.fr       */
+/*   Updated: 2024/02/05 17:04:35 by aaamam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/push_swap.h"
 
-int ft_isdigit(int c)
+int	ft_isdigit(int c)
 {
-    if (c >= '0' && c <= '9')
-        return (1);
-    return (0);
+	if (c >= '0' && c <= '9')
+		return (1);
+	return (0);
 }
 
 int	ft_atoi(char *str, int *stack)

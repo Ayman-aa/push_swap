@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   push_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aaamam <aaamam@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aaamam <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/02 09:28:41 by aaamam            #+#    #+#             */
-/*   Updated: 2024/02/02 09:33:28 by aaamam           ###   ########.fr       */
+/*   Created: 2024/02/06 17:42:20 by aaamam            #+#    #+#             */
+/*   Updated: 2024/02/06 17:42:20 by aaamam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "../../includes/push_swap.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-
-typedef struct s_stacks
+void	pa(t_stack **a, t_stack **b)
 {
-	int				value;
-	struct s_stack	*next;
-	struct s_stack	*prev;
-}					t_stack;
+	if (stack_size(*b))
+		push(a, pop(b));
+}
 
-#endif
+void	pb(t_stack **a, t_stack **b)
+{
+	if (stack_size(*a))
+		push(b, pop(a));
+}

@@ -32,5 +32,4 @@ size_t	ft_strlen1(char *s);
 char	*new_line(char *line);
 char	*ft_get_line(int fd, char *line);
 char	*ft_get_next_line(char	*line);
-int		ft_strcmp(char *s1, char *s2);
 #endif

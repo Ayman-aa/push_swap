@@ -51,17 +51,15 @@ t_stack	*stack_max(t_stack *s)
 	return (max);
 }
 
-void	free_stack(t_stack **s)
+t_stack	*stack_bottom(t_stack *s)
 {
 	t_stack	*tmp;
 
-	if (!*s)
-		return ;
-	tmp = *s;
-	while (tmp)
-	{
-		tmp = (*s)->prev;
-		free(*s);
-		*s = tmp;
-	}
+	if (!s)
+		return (NULL);
+	tmp = s;
+	while (tmp->prev)
+		tmp = tmp->prev;
+	return (tmp);
 }
+

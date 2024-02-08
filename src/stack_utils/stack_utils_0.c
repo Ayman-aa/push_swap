@@ -49,14 +49,17 @@ int	stack_sorted(t_stack *s, int (*sorted)(int, int))
 	return (1);
 }
 
-t_stack	*stack_bottom(t_stack *s)
+void	free_stack(t_stack **s)
 {
 	t_stack	*tmp;
 
-	if (!s)
-		return (NULL);
-	tmp = s;
-	while (tmp->prev)
-		tmp = tmp->prev;
-	return (tmp);
+	if (!*s)
+		return ;
+	tmp = *s;
+	while (tmp)
+	{
+		tmp = (*s)->prev;
+		free(*s);
+		*s = tmp;
+	}
 }

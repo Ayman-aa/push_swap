@@ -12,7 +12,7 @@
 
 #include "../../includes/push_swap.h"
 
-void	ra(t_stack **a)
+void	rotate_a(t_stack **a)
 {
 	t_stack	*tmp;
 	t_stack	*to_bottom;
@@ -29,7 +29,7 @@ void	ra(t_stack **a)
 	}
 }
 
-void	rb(t_stack **b)
+void	rotate_b(t_stack **b)
 {
 	t_stack	*tmp;
 	t_stack	*to_bottom;
@@ -46,8 +46,8 @@ void	rb(t_stack **b)
 	}
 }
 
-void	rr(t_stack **a, t_stack **b)
+void	rotate_r(t_stack **a, t_stack **b)
 {
-	ra(a);
-	rb(b);
+	rotate_a(a);
+	rotate_b(b);
 }

@@ -12,13 +12,13 @@
 
 #include "../../includes/push_swap.h"
 
-void	pa(t_stack **a, t_stack **b)
+void	push_a_bonus(t_stack **a, t_stack **b)
 {
 	if (stack_size(*b))
 		push(a, pop(b));
 }
 
-void	pb(t_stack **a, t_stack **b)
+void	push_b_bonus(t_stack **a, t_stack **b)
 {
 	if (stack_size(*a))
 		push(b, pop(a));

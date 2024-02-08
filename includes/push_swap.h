@@ -18,8 +18,8 @@
 typedef struct s_stacks
 {
 	int				value;
-	struct s_stack	*next;
-	struct s_stack	*prev;
+	struct s_stacks	*next;
+	struct s_stacks	*prev;
 }					t_stack;
 
 int					sorted(int a, int b);

@@ -12,7 +12,7 @@
 
 #include "../../includes/push_swap.h"
 
-void	rra(t_stack **a)
+void	reverse_rotate_a(t_stack **a)
 {
 	t_stack	*bottom;
 
@@ -28,7 +28,7 @@ void	rra(t_stack **a)
 	}
 }
 
-void	rrb(t_stack **b)
+void	reverse_rotate_b(t_stack **b)
 {
 	t_stack	*bottom;
 
@@ -43,8 +43,8 @@ void	rrb(t_stack **b)
 		write(1, "rrb\n", 4);
 	}
 }
-void	rrr(t_stack **a, t_stack **b)
+void	reverse_rotate_r(t_stack **a, t_stack **b)
 {
-	rra(a);
-	rrb(b);
+	reverse_rotate_a(a);
+	reverse_rotate_b(b);
 }

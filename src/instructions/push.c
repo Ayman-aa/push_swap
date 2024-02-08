@@ -12,7 +12,7 @@
 
 #include "../../includes/push_swap.h"
 
-void	pa(t_stack **a, t_stack **b)
+void	push_a(t_stack **a, t_stack **b)
 {
 	if (stack_size(*b))
 	{
@@ -21,7 +21,7 @@ void	pa(t_stack **a, t_stack **b)
 	}
 }
 
-void	pb(t_stack **a, t_stack **b)
+void	push_a(t_stack **a, t_stack **b)
 {
 	if (stack_size(*a))
 	{

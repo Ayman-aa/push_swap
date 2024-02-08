@@ -12,7 +12,7 @@
 
 #include "../../includes/push_swap.h"
 
-void	sa(t_stack **a)
+void	swap_a(t_stack **a)
 {
 	if (stack_size(*a) >= 2)
 	{
@@ -21,7 +21,7 @@ void	sa(t_stack **a)
 	}
 }
 
-void	sb(t_stack **b)
+void	swap_b(t_stack **b)
 {
 	if (stack_size(*b) >= 2)
 	{
@@ -30,7 +30,7 @@ void	sb(t_stack **b)
 	}
 }
 
-void	ss(t_stack **a, t_stack **b)
+void	swap_s(t_stack **a, t_stack **b)
 {
 	if (stack_size(*a) >= 2)
 		swap(&(*a)->value, &(*a)->prev->value);

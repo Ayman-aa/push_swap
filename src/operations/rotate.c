@@ -21,7 +21,7 @@ void	ra(t_stack **a)
 	if (stack_size(*a) >= 2)
 	{
 		data = pop(a);
-		to_bottom = create_node(data);
+		to_bottom = new_node(data);
 		tmp = stack_bottom(*a);
 		to_bottom->next = tmp;
 		tmp->prev = to_bottom;
@@ -38,7 +38,7 @@ void	rb(t_stack **b)
 	if (stack_size(*b) >= 2)
 	{
 		data = pop(b);
-		to_bottom = create_node(data);
+		to_bottom = new_node(data);
 		tmp = stack_bottom(*b);
 		to_bottom->next = tmp;
 		tmp->prev = to_bottom;

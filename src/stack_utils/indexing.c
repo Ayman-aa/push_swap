@@ -19,6 +19,18 @@ t_stack	*stack_top(t_stack *s)
 	return (s);
 }
 
+t_stack	*stack_bottom(t_stack *s)
+{
+	t_stack	*tmp;
+
+	if (!s)
+		return (NULL);
+	tmp = s;
+	while (tmp->prev)
+		tmp = tmp->prev;
+	return (tmp);
+}
+
 t_stack	*stack_min(t_stack *s)
 {
 	t_stack	*min;
@@ -50,16 +62,3 @@ t_stack	*stack_max(t_stack *s)
 	}
 	return (max);
 }
-
-t_stack	*stack_bottom(t_stack *s)
-{
-	t_stack	*tmp;
-
-	if (!s)
-		return (NULL);
-	tmp = s;
-	while (tmp->prev)
-		tmp = tmp->prev;
-	return (tmp);
-}
-

@@ -30,7 +30,7 @@ int	get_range(t_stack *a)
 
 static void	pb_rb(t_stack **a, t_stack **b, int *i)
 {
-	pb(a, b);
+	push_b(a, b);
 	rb(b);
 	(*i)++;
 }
@@ -50,7 +50,7 @@ void	sort_others(t_stack **a, t_stack **b, int range, int size)
 			pb_rb(a, b, &i);
 		else if ((*a)->value > sarr[i] && (*a)->value <= sarr[range + i])
 		{
-			pb(a, b);
+			push_b(a, b);
 			if (stack_size(*b) >= 2 && (*b)->value < (*b)->prev->value)
 				sb(b);
 			i++;

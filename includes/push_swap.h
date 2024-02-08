@@ -24,4 +24,10 @@ typedef struct s_stacks
 
 int					sorted(int a, int b);
 
+
+t_stack				*stack_bottom(t_stack *s);
+t_stack				*stack_top(t_stack *s);
+t_stack				*stack_min(t_stack *s);
+t_stack				*stack_max(t_stack *s);
+
 #endif

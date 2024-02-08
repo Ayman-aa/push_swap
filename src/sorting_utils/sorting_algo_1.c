@@ -29,7 +29,7 @@ void	start_sort(t_stack **a, t_stack **b)
 		while (*b)
 		{
 			max_to_top(b);
-			pa(a, b);
+			push_a(a, b);
 		}
 	}
 }
@@ -74,37 +74,37 @@ void	sort_four(t_stack **a, t_stack **b)
 		sa(a);
 	if (!stack_sorted(*a, sorted))
 	{
-		pb(a, b);
+		push_b(a, b);
 		sort_three(a);
-		pa(a, b);
+		push_a(a, b);
 	}
 }
 
 void	min_to_b(t_stack **a, t_stack **b)
 {
 	if (stack_min(*a) == stack_top(*a))
-		pb(a, b);
+		push_b(a, b);
 	else if (stack_min(*a) == stack_top(*a)->prev)
 	{
 		sa(a);
-		pb(a, b);
+		push_b(a, b);
 	}
 	else if (stack_min(*a) == stack_bottom(*a)->next)
 	{
 		rra(a);
 		rra(a);
-		pb(a, b);
+		push_b(a, b);
 	}
 	else if (stack_min(*a) == stack_bottom(*a))
 	{
 		rra(a);
-		pb(a, b);
+		push_b(a, b);
 	}
 	else
 	{
 		ra(a);
 		ra(a);
-		pb(a, b);
+		push_b(a, b);
 	}
 }
 
@@ -113,6 +113,6 @@ void	sort_five(t_stack **a, t_stack **b)
 	min_to_b(a, b);
 	min_to_b(a, b);
 	sort_three(a);
-	pa(a, b);
-	pa(a, b);
+	push_a(a, b);
+	push_a(a, b);
 }

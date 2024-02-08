@@ -65,26 +65,3 @@ void	free_stack(t_stack **s)
 		*s = tmp;
 	}
 }
-
-long long	ft_atol(const char *str)
-{
-	long	nbr;
-	int		sign;
-
-	nbr = 0;
-	sign = 1;
-	while (*str && ((*str >= 9 && *str <= 13) || *str == 32))
-		str++;
-	if (*str && (*str == '-' || *str == '+'))
-	{
-		if (*str == '-')
-			sign = -1;
-		str++;
-	}
-	while (*str && ft_isdigit(*str))
-	{
-		nbr = nbr * 10 + (*str - '0');
-		str++;
-	}
-	return (nbr * sign);
-}

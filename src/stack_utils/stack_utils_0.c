@@ -35,3 +35,28 @@ int	stack_size(t_stack *s)
 	return (1 + stack_size(tmp->prev));
 }
 
+int	stack_sorted(t_stack *s, int (*sorted)(int, int))
+{
+	t_stack	*tmp;
+
+	tmp = s;
+	while (tmp->prev)
+	{
+		if (sorted(tmp->value, tmp->prev->value) == 0)
+			return (0);
+		tmp = tmp->prev;
+	}
+	return (1);
+}
+
+t_stack	*stack_bottom(t_stack *s)
+{
+	t_stack	*tmp;
+
+	if (!s)
+		return (NULL);
+	tmp = s;
+	while (tmp->prev)
+		tmp = tmp->prev;
+	return (tmp);
+}

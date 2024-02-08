@@ -17,33 +17,6 @@ int	sorted(int a, int b)
 	return (a < b);
 }
 
-int	stack_sorted(t_stack *s, int (*sorted)(int, int))
-{
-	t_stack	*tmp;
-
-	tmp = s;
-	while (tmp->prev)
-	{
-		if (sorted(tmp->value, tmp->prev->value) == 0)
-			return (0);
-		tmp = tmp->prev;
-	}
-	return (1);
-}
-
-
-t_stack	*stack_bottom(t_stack *s)
-{
-	t_stack	*tmp;
-
-	if (!s)
-		return (NULL);
-	tmp = s;
-	while (tmp->prev)
-		tmp = tmp->prev;
-	return (tmp);
-}
-
 void	swap(int *a, int *b)
 {
 	int	c;
@@ -85,3 +58,25 @@ int	pop(t_stack **s)
 	return (popped);
 }
 
+long long	ft_atol(const char *str)
+{
+	long	nbr;
+	int		sign;
+
+	nbr = 0;
+	sign = 1;
+	while (*str && ((*str >= 9 && *str <= 13) || *str == 32))
+		str++;
+	if (*str && (*str == '-' || *str == '+'))
+	{
+		if (*str == '-')
+			sign = -1;
+		str++;
+	}
+	while (*str && ft_isdigit(*str))
+	{
+		nbr = nbr * 10 + (*str - '0');
+		str++;
+	}
+	return (nbr * sign);
+}

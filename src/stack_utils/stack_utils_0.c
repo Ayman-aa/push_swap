@@ -25,38 +25,6 @@ t_stack	*create_node(int n)
 	return (new);
 }
 
-void	push(t_stack **s, int n)
-{
-	t_stack	*new;
-
-	new = create_node(n);
-	if (s)
-	{
-		if (*s)
-		{
-			(*s)->next = new;
-			new->prev = *s;
-		}
-		*s = new;
-	}
-}
-
-int	pop(t_stack **s)
-{
-	int		popped;
-	t_stack	*tmp;
-
-	if (!*s)
-		return (0);
-	tmp = *s;
-	*s = (*s)->prev;
-	if (*s)
-		(*s)->next = NULL;
-	popped = tmp->value;
-	free(tmp);
-	return (popped);
-}
-
 int	stack_size(t_stack *s)
 {
 	t_stack	*tmp;

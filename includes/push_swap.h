@@ -22,4 +22,6 @@ typedef struct s_stacks
 	struct s_stack	*prev;
 }					t_stack;
 
+int					sorted(int a, int b);
+
 #endif

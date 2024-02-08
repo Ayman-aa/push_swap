@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error_handler.c                                    :+:      :+:    :+:   */
+/*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaamam <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/06 16:56:10 by aaamam            #+#    #+#             */
-/*   Updated: 2024/02/06 18:00:14 by aaamam           ###   ########.fr       */
+/*   Created: 2024/02/08 17:46:29 by aaamam            #+#    #+#             */
+/*   Updated: 2024/02/08 17:46:29 by aaamam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void	error_generator(void)
+void	ft_error(void)
 {
-	write(1, "Error\n", 6);
-	exit(0);
+	write(2, "Error\n", 6);
+	exit(1);
 }
 
-int	av_error(char *str)
+int	ft_isdigit(int c)
+{
+	return (c >= '0' && c <= '9');
+}
+
+int	is_number(char *str)
 {
 	int	i;
 
@@ -36,7 +41,7 @@ int	av_error(char *str)
 	return (0);
 }
 
-int	dup_error(t_stack *a, long long n)
+int	ft_duplicate(t_stack *a, long long n)
 {
 	t_stack	*tmp;
 

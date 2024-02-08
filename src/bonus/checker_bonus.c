@@ -37,7 +37,7 @@ void	apply_operations(t_stack **a, t_stack **b, char *line)
 	else if (ft_strncmp(line, "rrr\n", ft_strlen(line)) == 0)
 		_rrr(a, b);
 	else
-		error_generator();
+		ft_error();
 }
 
 void	start_cheking(t_stack **a, t_stack **b)

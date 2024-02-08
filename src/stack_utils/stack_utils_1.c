@@ -31,14 +31,6 @@ int	stack_sorted(t_stack *s, int (*sorted)(int, int))
 	return (1);
 }
 
-void	swap(int *a, int *b)
-{
-	int	c;
-
-	c = *a;
-	*a = *b;
-	*b = c;
-}
 
 t_stack	*stack_bottom(t_stack *s)
 {
@@ -52,31 +44,44 @@ t_stack	*stack_bottom(t_stack *s)
 	return (tmp);
 }
 
-void	initialize_stack(t_stack **a, int ac, char **av)
+void	swap(int *a, int *b)
 {
-	int		j;
-	char	**sp;
+	int	c;
 
-	while (ac >= 0)
+	c = *a;
+	*a = *b;
+	*b = c;
+}
+
+void	push(t_stack **s, int n)
+{
+	t_stack	*new;
+
+	new = create_node(n);
+	if (s)
 	{
-		sp = ft_split(av[ac], ' ');
-		if (sp == NULL)
+		if (*s)
 		{
-			free(sp);
-			error_generator();
+			(*s)->next = new;
+			new->prev = *s;
 		}
-		j = 0;
-		while (sp[j + 1])
-			j++;
-		while (j >= 0)
-		{
-			if (av_error(sp[j]) || dup_error(*a, ft_atol(sp[j])))
-				error_generator();
-			push(a, ft_atol(sp[j]));
-			j--;
-		}
-		j = 0;
-		free_all(sp);
-		ac--;
+		*s = new;
 	}
 }
+
+int	pop(t_stack **s)
+{
+	int		popped;
+	t_stack	*tmp;
+
+	if (!*s)
+		return (0);
+	tmp = *s;
+	*s = (*s)->prev;
+	if (*s)
+		(*s)->next = NULL;
+	popped = tmp->value;
+	free(tmp);
+	return (popped);
+}
+

@@ -16,7 +16,7 @@ void	start_sort(t_stack **a, t_stack **b)
 {
 	(void)b;
 	if (stack_size(*a) == 2)
-		sa(a);
+		swap_a(a);
 	else if (stack_size(*a) == 3)
 		sort_three(a);
 	else if (stack_size(*a) == 4)
@@ -39,39 +39,39 @@ void	sort_three(t_stack **a)
 	if (stack_top(*a)->value > stack_top(*a)->prev->value
 		&& stack_top(*a)->prev->value > stack_bottom(*a)->value)
 	{
-		ra(a);
-		sa(a);
+		rotate_a(a);
+		swap_a(a);
 	}
 	else if (stack_top(*a)->value > stack_top(*a)->prev->value
 		&& stack_bottom(*a)->value > stack_top(*a)->prev->value
 		&& stack_top(*a)->value > stack_bottom(*a)->value)
-		ra(a);
+		rotate_a(a);
 	else if (stack_top(*a)->value < stack_bottom(*a)->value
 		&& stack_top(*a)->value < stack_top(*a)->prev->value
 		&& stack_top(*a)->prev->value > stack_bottom(*a)->value)
 	{
-		sa(a);
-		ra(a);
+		swap_a(a);
+		rotate_a(a);
 	}
 	else if (stack_top(*a)->value < stack_top(*a)->prev->value
 		&& stack_bottom(*a)->value < stack_top(*a)->value
 		&& stack_top(*a)->prev->value > stack_bottom(*a)->value)
-		rra(a);
+		reverse_rotate_a(a);
 	else
-		sa(a);
+		swap_a(a);
 }
 
 void	sort_four(t_stack **a, t_stack **b)
 {
 	if (stack_min(*a) == stack_bottom(*a))
-		rra(a);
+		reverse_rotate_a(a);
 	else if (stack_min(*a) == stack_bottom(*a)->next)
 	{
-		rra(a);
-		rra(a);
+		reverse_rotate_a(a);
+		reverse_rotate_a(a);
 	}
 	else if (stack_min(*a) == stack_top(*a)->prev)
-		sa(a);
+		swap_a(a);
 	if (!stack_sorted(*a, sorted))
 	{
 		push_b(a, b);
@@ -86,24 +86,24 @@ void	min_to_b(t_stack **a, t_stack **b)
 		push_b(a, b);
 	else if (stack_min(*a) == stack_top(*a)->prev)
 	{
-		sa(a);
+		swap_a(a);
 		push_b(a, b);
 	}
 	else if (stack_min(*a) == stack_bottom(*a)->next)
 	{
-		rra(a);
-		rra(a);
+		reverse_rotate_a(a);
+		reverse_rotate_a(a);
 		push_b(a, b);
 	}
 	else if (stack_min(*a) == stack_bottom(*a))
 	{
-		rra(a);
+		reverse_rotate_a(a);
 		push_b(a, b);
 	}
 	else
 	{
-		ra(a);
-		ra(a);
+		rotate_a(a);
+		rotate_a(a);
 		push_b(a, b);
 	}
 }

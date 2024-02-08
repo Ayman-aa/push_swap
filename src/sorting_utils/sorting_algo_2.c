@@ -31,7 +31,7 @@ int	get_range(t_stack *a)
 static void	pb_rb(t_stack **a, t_stack **b, int *i)
 {
 	push_b(a, b);
-	rb(b);
+	rotate_b(b);
 	(*i)++;
 }
 
@@ -52,11 +52,11 @@ void	sort_others(t_stack **a, t_stack **b, int range, int size)
 		{
 			push_b(a, b);
 			if (stack_size(*b) >= 2 && (*b)->value < (*b)->prev->value)
-				sb(b);
+				swap_b(b);
 			i++;
 		}
 		else
-			ra(a);
+			rotate_a(a);
 	}
 	free(sarr);
 }
@@ -86,8 +86,8 @@ void	max_to_top(t_stack **b)
 		if (index == 0)
 			break ;
 		else if (index <= size / 2)
-			rb(b);
+			rotate_b(b);
 		else if (index > size / 2)
-			rrb(b);
+			reverse_rotate_b(b);
 	}
 }

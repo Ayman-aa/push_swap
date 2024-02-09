@@ -76,6 +76,6 @@ int					*stack_to_sarray(t_stack *s);
 int					get_range(t_stack *s);
 int					max_index(t_stack *b);
 void				max_to_top(t_stack **b);
-static void 		push_rotate_b(t_stack **a, t_stack **b, int *i);
+static void			push_rotate_b(t_stack **a, t_stack **b, int *i);
 
 #endif

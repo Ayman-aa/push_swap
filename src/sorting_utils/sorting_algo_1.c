@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sorting_algo_1.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aaamam <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: aaamam <aaamam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 16:56:27 by aaamam            #+#    #+#             */
-/*   Updated: 2024/02/06 16:56:28 by aaamam           ###   ########.fr       */
+/*   Updated: 2024/02/09 13:26:19 by aaamam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,29 +36,32 @@ void	start_sort(t_stack **a, t_stack **b)
 
 void	sort_three(t_stack **a)
 {
-	if (stack_top(*a)->value > stack_top(*a)->prev->value
-		&& stack_top(*a)->prev->value > stack_bottom(*a)->value)
-	{
-		rotate_a(a);
-		swap_a(a);
-	}
-	else if (stack_top(*a)->value > stack_top(*a)->prev->value
-		&& stack_bottom(*a)->value > stack_top(*a)->prev->value
-		&& stack_top(*a)->value > stack_bottom(*a)->value)
-		rotate_a(a);
-	else if (stack_top(*a)->value < stack_bottom(*a)->value
-		&& stack_top(*a)->value < stack_top(*a)->prev->value
-		&& stack_top(*a)->prev->value > stack_bottom(*a)->value)
+	int top = stack_top(*a)->value;
+	int mid = stack_top(*a)->prev->value;
+	int bot = stack_bottom(*a)->value;
+
+	if (top > mid && mid < bot && top < bot)
 	{
 		swap_a(a);
-		rotate_a(a);
 	}
-	else if (stack_top(*a)->value < stack_top(*a)->prev->value
-		&& stack_bottom(*a)->value < stack_top(*a)->value
-		&& stack_top(*a)->prev->value > stack_bottom(*a)->value)
+	else if (top > mid && mid > bot)
+	{
+		swap_a(a);
 		reverse_rotate_a(a);
-	else
+	}
+	else if (top > mid && bot > mid)
+	{
+		rotate_a(a);
+	}
+	else if (top < mid && mid > bot && bot > top)
+	{
 		swap_a(a);
+		rotate_a(a);
+	}
+	else if (top < mid && mid > bot && mid > top)
+	{
+		reverse_rotate_a(a);
+	}
 }
 
 void	sort_four(t_stack **a, t_stack **b)

@@ -11,14 +11,14 @@ SRCS	= src/parsing.c src/push_swap.c \
 			src/operations/push.c \
 			src/operations/rotate.c \
 			src/operations/reverse_rotate.c \
-			src/sorting_utils/sorting_algo_0.c \
-			src/sorting_utils/sorting_algo_1.c \
-			src/sorting_utils/sorting_algo_2.c \
-			src/stack_utils/behavior.c \
-			src/stack_utils/tools.c \
-			src/stack_utils/indexing.c \
+			src/sorting/algo_station.c \
+			src/sorting/sort_me.c \
+			src/sorting/use_to_sort.c \
+			src/stack/behavior.c \
+			src/stack/tools.c \
+			src/stack/indexing.c \
 
-SRCSB	= src/bonus/checker.c
+SRCSB	= src/bonus/checker_bonus.c
 
 
 OBJS	= $(SRCS:.c=.o)

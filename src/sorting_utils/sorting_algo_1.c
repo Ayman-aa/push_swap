@@ -36,7 +36,6 @@ void	start_sort(t_stack **a, t_stack **b)
 
 void	sort_three(t_stack **a)
 {
-
 	if (stack_top(*a)->value > stack_top(*a)->prev->value && \
 	stack_top(*a)->prev->value < stack_bottom(*a)->value && \
 	stack_top(*a)->value < stack_bottom(*a)->value)

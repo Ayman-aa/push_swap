@@ -82,7 +82,7 @@ void	sort_four(t_stack **a, t_stack **b)
 	}
 }
 
-void	min_to_b(t_stack **a, t_stack **b)
+void	smallest_to_b(t_stack **a, t_stack **b)
 {
 	if (stack_min(*a) == stack_top(*a))
 		push_b(a, b);
@@ -112,7 +112,7 @@ void	min_to_b(t_stack **a, t_stack **b)
 
 void	sort_five(t_stack **a, t_stack **b)
 {
-	min_to_b(a, b);
+	smallest_to_b(a, b);
 	smallest_to_b(a, b);
 	sort_three(a);
 	push_a(a, b);

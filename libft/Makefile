@@ -2,7 +2,7 @@ SRCS = ft_split.c get_next_line.c \
 		get_next_line_utils.c tools.c
 		
 OBJS = ${SRCS:.c=.o}
-NAME = libftprintf.a
+NAME = libft.a
 CC = cc
 RM = rm -f
 CFLAGS = -Wall -Wextra -Werror

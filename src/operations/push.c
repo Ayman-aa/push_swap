@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap_bonus.c                                       :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaamam <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/06 17:43:29 by aaamam            #+#    #+#             */
-/*   Updated: 2024/02/06 17:43:29 by aaamam           ###   ########.fr       */
+/*   Created: 2024/02/06 17:07:37 by aaamam            #+#    #+#             */
+/*   Updated: 2024/02/06 17:07:37 by aaamam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void	sa(t_stack **a)
+void	push_a(t_stack **a, t_stack **b)
 {
-	if (stack_size(*a) >= 2)
-		swap(&(*a)->value, &(*a)->prev->value);
+	if (stack_size(*b))
+	{
+		push(a, pop(b));
+		write(1, "pa\n", 3);
+	}
 }
 
-void	sb(t_stack **b)
+void	push_b(t_stack **a, t_stack **b)
 {
-	if (stack_size(*b) >= 2)
-		swap(&(*b)->value, &(*b)->prev->value);
-}
-
-void	ss(t_stack **a, t_stack **b)
-{
-	if (stack_size(*a) >= 2)
-		swap(&(*a)->value, &(*a)->prev->value);
-	if (stack_size(*b) >= 2)
-		swap(&(*b)->value, &(*b)->prev->value);
+	if (stack_size(*a))
+	{
+		push(b, pop(a));
+		write(1, "pb\n", 3);
+	}
 }

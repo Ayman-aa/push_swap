@@ -32,4 +32,8 @@ size_t	ft_strlen1(char *s);
 char	*new_line(char *line);
 char	*ft_get_line(int fd, char *line);
 char	*ft_get_next_line(char	*line);
+char	*ft_strdup(const char *s1);
+size_t	ft_strlen(const char *s);
+void	*ft_memcpy(void *dest, const void *src, size_t n);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
 #endif

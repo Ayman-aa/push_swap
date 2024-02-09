@@ -41,6 +41,7 @@ void	rrb(t_stack **b)
 		(*b)->next = NULL;
 	}
 }
+
 void	rrr(t_stack **a, t_stack **b)
 {
 	rra(a);

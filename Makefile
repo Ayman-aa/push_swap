@@ -28,14 +28,14 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	@make -C libft
-	@cp libft/libft.a .
+	@mv libft/libft.a .
 	@$(CC) $(CFLAGS) $(OBJS) $(INCLUDE) $(LIBFT) -o $(NAME)
 
 bonus: $(BONUS_NAME)
 
 $(BONUS_NAME): $(OBJSB)
 	@make -C libft
-	@cp libft/libft.a .
+	@mv libft/libft.a .
 	@$(CC) $(CFLAGS) $(OBJSB) $(INCLUDE) $(LIBFT) -o $(BONUS_NAME)
 
 clean:	

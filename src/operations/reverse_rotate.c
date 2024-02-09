@@ -43,6 +43,7 @@ void	reverse_rotate_b(t_stack **b)
 		write(1, "rrb\n", 4);
 	}
 }
+
 void	reverse_rotate_r(t_stack **a, t_stack **b)
 {
 	reverse_rotate_a(a);

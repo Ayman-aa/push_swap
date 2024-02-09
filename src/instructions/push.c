@@ -21,7 +21,7 @@ void	push_a(t_stack **a, t_stack **b)
 	}
 }
 
-void	push_a(t_stack **a, t_stack **b)
+void	push_b(t_stack **a, t_stack **b)
 {
 	if (stack_size(*a))
 	{

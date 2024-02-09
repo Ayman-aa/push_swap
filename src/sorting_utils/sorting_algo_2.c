@@ -28,7 +28,7 @@ int	get_range(t_stack *a)
 	return (range);
 }
 
-static void	pb_rb(t_stack **a, t_stack **b, int *i)
+static void	push_rotate_b(t_stack **a, t_stack **b, int *i)
 {
 	push_b(a, b);
 	rotate_b(b);
@@ -47,7 +47,7 @@ void	sort_others(t_stack **a, t_stack **b, int range, int size)
 		if (range + i >= size)
 			range = size - i - 1;
 		if (stack_top(*a)->value <= sarr[i])
-			pb_rb(a, b, &i);
+			push_rotate_b(a, b, &i);
 		else if ((*a)->value > sarr[i] && (*a)->value <= sarr[range + i])
 		{
 			push_b(a, b);

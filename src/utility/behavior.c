@@ -63,3 +63,17 @@ void	free_stack(t_stack **s)
 		*s = tmp;
 	}
 }
+
+void	*free_all(char **seperated)
+{
+	size_t	i;
+
+	i = 0;
+	while (seperated[i])
+	{
+		free(seperated[i]);
+		i++;
+	}
+	free(seperated);
+	return (NULL);
+}

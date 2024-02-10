@@ -18,7 +18,18 @@ SRCS	= src/parsing.c src/push_swap.c \
 			src/stack/tools.c \
 			src/stack/indexing.c \
 
-SRCSB	= src/bonus/checker_bonus.c
+SRCSB	= src/bonus/checker_bonus.c \
+			src/operations/swap.c \
+			src/operations/push.c \
+			src/operations/rotate.c \
+			src/operations/reverse_rotate.c \
+			src/sorting/algo_station.c \
+			src/sorting/sort_me.c \
+			src/sorting/use_to_sort.c \
+			src/stack/behavior.c \
+			src/stack/tools.c \
+			src/stack/indexing.c \
+			src/parsing.c
 
 
 OBJS	= $(SRCS:.c=.o)
@@ -48,4 +59,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean re bonusm 

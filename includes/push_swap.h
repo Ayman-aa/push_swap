@@ -25,17 +25,17 @@ typedef struct s_stacks
 void				initialize_stack(t_stack **a, int ac, char **av);
 
 // instructions
-void				push_a(t_stack **a, t_stack **b);
-void				push_b(t_stack **a, t_stack **b);
-void				swap_a(t_stack **a);
-void				swap_b(t_stack **b);
-void				swap_s(t_stack **a, t_stack **b);
-void				rotate_a(t_stack **a);
-void				rotate_b(t_stack **b);
-void				rotate_r(t_stack **a, t_stack **b);
-void				reverse_rotate_a(t_stack **a);
-void				reverse_rotate_b(t_stack **b);
-void				reverse_rotate_r(t_stack **b, t_stack **a);
+void				push_a(t_stack **a, t_stack **b, int param);
+void				push_b(t_stack **a, t_stack **b, int param);
+void				swap_a(t_stack **a, int param);
+void				swap_b(t_stack **b, int param);
+void				swap_s(t_stack **a, t_stack **b, int param);
+void				rotate_a(t_stack **a, int param);
+void				rotate_b(t_stack **b, int param);
+void				rotate_r(t_stack **a, t_stack **b, int param);
+void				reverse_rotate_a(t_stack **a, int param);
+void				reverse_rotate_b(t_stack **b, int param);
+void				reverse_rotate_r(t_stack **b, t_stack **a, int param);
 
 // parsing
 void				ft_error(void);
@@ -76,5 +76,9 @@ int					*stack_to_sarray(t_stack *s);
 int					get_range(t_stack *s);
 int					max_index(t_stack *b);
 void				max_to_top(t_stack **b);
+
+// bonus utils
+void				apply_operations(t_stack **a, t_stack **b, char *line);
+void				start_cheking(t_stack **a, t_stack **b);
 
 #endif

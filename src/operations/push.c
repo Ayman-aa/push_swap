@@ -12,20 +12,22 @@
 
 #include "../../includes/push_swap.h"
 
-void	push_a(t_stack **a, t_stack **b)
+void	push_a(t_stack **a, t_stack **b, int param)
 {
 	if (stack_size(*b))
 	{
 		push(a, pop(b));
-		write(1, "pa\n", 3);
+		if (!param)
+			write(1, "pa\n", 3);
 	}
 }
 
-void	push_b(t_stack **a, t_stack **b)
+void	push_b(t_stack **a, t_stack **b, int param)
 {
 	if (stack_size(*a))
 	{
 		push(b, pop(a));
-		write(1, "pb\n", 3);
+		if (!param)
+			write(1, "pb\n", 3);
 	}
 }

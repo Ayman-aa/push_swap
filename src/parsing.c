@@ -58,3 +58,32 @@ int	ft_duplicate(t_stack *a, long long n)
 	}
 	return (0);
 }
+
+void	initialize_stack(t_stack **a, int ac, char **av)
+{
+	int		j;
+	char	**sp;
+
+	while (ac >= 0)
+	{
+		sp = ft_split(av[ac], ' ');
+		if (sp == NULL)
+		{
+			free(sp);
+			ft_error();
+		}
+		j = 0;
+		while (sp[j + 1])
+			j++;
+		while (j >= 0)
+		{
+			if (is_number(sp[j]) || ft_duplicate(*a, ft_atol(sp[j])))
+				ft_error();
+			push(a, ft_atol(sp[j]));
+			j--;
+		}
+		j = 0;
+		free_all(sp);
+		ac--;
+	}
+}

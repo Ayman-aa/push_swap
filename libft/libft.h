@@ -23,7 +23,7 @@
 #  define BUFFER_SIZE 10
 # endif
 
-int		ft_strcmp(char *s1, char *s2);
+int	    ft_strncmp(const char *s1, const char *s2, size_t n);
 char	**ft_split(char const *s, char c);
 char	*get_next_line(int fd);
 char	*ft_strjoin1(char *line, char *buff);

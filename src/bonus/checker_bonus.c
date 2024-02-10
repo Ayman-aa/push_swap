@@ -10,32 +10,32 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap_bonus.h"
+#include "../../includes/push_swap.h"
 
 void	apply_operations(t_stack **a, t_stack **b, char *line)
 {
 	if (ft_strncmp(line, "sa\n", ft_strlen(line)) == 0)
-		_sa(a);
+		swap_a(a, 1);
 	else if (ft_strncmp(line, "sb\n", ft_strlen(line)) == 0)
-		_sb(b);
+		swap_b(b, 1);
 	else if (ft_strncmp(line, "ss\n", ft_strlen(line)) == 0)
-		_ss(a, b);
+		swap_s(a, b, 1);
 	else if (ft_strncmp(line, "pa\n", ft_strlen(line)) == 0)
-		_pa(a, b);
+		push_a(a, b, 1);
 	else if (ft_strncmp(line, "pb\n", ft_strlen(line)) == 0)
-		_pb(a, b);
+		push_b(a, b, 1);
 	else if (ft_strncmp(line, "ra\n", ft_strlen(line)) == 0)
-		_ra(a);
+		rotate_a(a, 1);
 	else if (ft_strncmp(line, "rb\n", ft_strlen(line)) == 0)
-		_rb(b);
+		rotate_b(b, 1);
 	else if (ft_strncmp(line, "rr\n", ft_strlen(line)) == 0)
-		_rr(a, b);
+		rotate_r(a, b, 1);
 	else if (ft_strncmp(line, "rra\n", ft_strlen(line)) == 0)
-		_rra(a);
+		reverse_rotate_a(a, 1);
 	else if (ft_strncmp(line, "rrb\n", ft_strlen(line)) == 0)
-		_rrb(b);
+		reverse_rotate_b(b, 1);
 	else if (ft_strncmp(line, "rrr\n", ft_strlen(line)) == 0)
-		_rrr(a, b);
+		reverse_rotate_r(a, b, 1);
 	else
 		ft_error();
 }

@@ -1,0 +1,28 @@
+part 1:
+when the program starts:
+1 - it takes the user input as command line arguments (av) 
+    and with an if statement it checks if there are 
+    no command-line arguments provided or if the first argument is an empty string. 
+    If either condition is true, the program returns 0
+
+2 - if not (else),If there are command-line arguments provided, 
+    the initialize_stack function is called to initialize stack A. 
+    The ac - 2 argument adjusts the number of arguments 
+    passed to the function by subtracting 2 to exclude
+    the program name and the -c option if present.
+    The av + 1 argument passes a pointer to the second element of the av array, skipping the program name. 
+
+3 - initialize_stack: This is the main function responsible for initializing the stack a.
+    It takes three arguments: a (a pointer to the stack), ac (the number of command-line arguments),
+    and av (an array of command-line arguments).
+    It starts by looping through each command-line argument (av) 
+    from the end to the beginning, excluding the program name itself.
+    For each command-line argument, it splits the string into individual numbers using ft_split function.
+    It then iterates through the resulting array of strings (splited
+    ) and converts each string into an integer using ft_atol function,
+    checking for errors like non-numeric characters and duplicates.
+    Finally, it pushes each integer onto the stack a using the push function.
+
+part 2 :
+after we initialize the stack we check if the elements of the stack are sorted or not:
+1 - 

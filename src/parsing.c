@@ -62,28 +62,28 @@ int	ft_duplicate(t_stack *a, long long n)
 void	initialize_stack(t_stack **a, int ac, char **av)
 {
 	int		j;
-	char	**sp;
+	char	**splited;
 
 	while (ac >= 0)
 	{
-		sp = ft_split(av[ac], ' ');
-		if (sp == NULL)
+		splited = ft_split(av[ac], ' ');
+		if (splited == NULL)
 		{
-			free(sp);
+			free(splited);
 			ft_error();
 		}
 		j = 0;
-		while (sp[j + 1])
+		while (splited[j + 1])
 			j++;
 		while (j >= 0)
 		{
-			if (is_number(sp[j]) || ft_duplicate(*a, ft_atol(sp[j])))
+			if (is_number(splited[j]) || ft_duplicate(*a, ft_atol(splited[j])))
 				ft_error();
-			push(a, ft_atol(sp[j]));
+			push(a, ft_atol(splited[j]));
 			j--;
 		}
 		j = 0;
-		free_all(sp);
+		free_all(splited);
 		ac--;
 	}
 }

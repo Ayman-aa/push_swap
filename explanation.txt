@@ -25,4 +25,28 @@ when the program starts:
 
 part 2 :
 after we initialize the stack we check if the elements of the stack are sorted or not:
-1 - 
+1 - stack_sorted fucntion that is defined as follows int stack_sorted(t_stack *s, int (*sorted)(int, int))
+    takes as parameters a pointer to the stack and a pointer to a function (sorted : int sorted(int a, int b))
+    The stack_sorted function iterates through each element of the stack s starting 
+    from the top (tmp) and moving towards the bottom.
+    For each pair of adjacent elements, it calls the sorted function with the values of the 
+    current element tmp->value and its previous element tmp->prev->value.
+    If the sorted function returns 0 for any pair (indicating that the elements are not in ascending order), 
+    the function immediately returns 0, indicating that the stack is not sorted.
+    If the loop completes without encountering any unordered pairs, the function returns 1, indicating that the stack is sorted.
+
+2 - if the element are sorted the stack get deallocated by free_stack fucntion
+    that take pointer to a pointer to a stack as argument to manupilate the the elements in each new_node
+    (freeing them).
+
+part 3:
+if the elements of the stack are not sorted then we try to sort them:
+1 - we call the start_sort function that takes pointer to a pointer to stack (a and b).
+    the function checks how many elements are within our stack that has been pushed earlier in initialize_stack function
+    with the help of stack_size function that takes pointer to stack and keep calling itself recursively 
+    by taking the previous node as parameter and adding one on each call.  
+
+2 - if the stack size is equal to 2 , we simply run the instruction swap_a in which we swap the top element
+    in the stack with the previous element in the stack. (if 2 1 then 1 2).
+
+3 - 

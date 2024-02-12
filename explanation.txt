@@ -102,10 +102,17 @@ if the elements of the stack are not sorted then we try to sort them:
     after being sorted we push back the numbers from stack b to stack a.
 
 part 4 :
+if the stack size is greater than 5, we follow up on another sorting method, we use an diffrent approach to use 
+the insertion sorting algorithm.
+the insertion algorithm is an algorithm with time complexicity of O(n^2) so it's no use when dealing with large items.
+so the approach we're taking is to take the large stack size and split it into chunks and sort each chunk in itself 
+in an array and compare the sorted chunk in the array with the elements in the stack a.
+then merge them toghether in stack b and then send back to stack a from the biggest to the smallest.
 
-
-
-
+1 - we call up for sort_others function that takes parameters a and b, which are pointers to stacks, 
+    range, which is the number of elements in a chunk, and size, which is the total number of elements in the stack a.
+    we allocates memory for an array sarr using stack_to_sarray.
+2 - 
 
 
 

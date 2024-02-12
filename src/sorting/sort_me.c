@@ -6,7 +6,7 @@
 /*   By: aaamam <aaamam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 16:56:27 by aaamam            #+#    #+#             */
-/*   Updated: 2024/02/10 09:58:15 by aaamam           ###   ########.fr       */
+/*   Updated: 2024/02/12 13:55:35 by aaamam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ void	sort_three(t_stack **a)
 	stack_top(*a)->prev->value > stack_top(*a)->value)
 		reverse_rotate_a(a, 0);
 }
+
 
 void	sort_four(t_stack **a, t_stack **b)
 {

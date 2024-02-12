@@ -111,8 +111,17 @@ then merge them toghether in stack b and then send back to stack a from the bigg
 
 1 - we call up for sort_others function that takes parameters a and b, which are pointers to stacks, 
     range, which is the number of elements in a chunk, and size, which is the total number of elements in the stack a.
-    we allocates memory for an array sarr using stack_to_sarray.
-2 - 
+    we assign an array with the sorted version of the stack but in form of an array with the help of stack_to_sarray function.
+
+2 - in stack_to_sarray function we create an array with the size of the stack and then we start to fill the array
+    with the elements of the stack, and then we call upon insertion_sort function that uses the insertion sort algorithm
+    to sort the numbers in our array in an ascending order.
+
+3 - once we had the sorted array, we start to loop on the elements of the stack a until we reach the last element.
+    we set a condition (if (range + i >= size)) ensures that we don't exceed the bounds of the array in other words
+    the condition hold our chunk until we ran out of chunks and we reach the end of elements in stack a.
+
+4 - 
 
 
 

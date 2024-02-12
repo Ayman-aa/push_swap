@@ -22,6 +22,13 @@ when the program starts:
     ) and converts each string into an integer using ft_atol function,
     checking for errors like non-numeric characters and duplicates.
     Finally, it pushes each integer onto the stack a using the push function.
+4 - the push takes two parameters a pointer to a pointer to a stack and an integer
+    in which we hold the value or the element, we call new_node function that allocates
+    a space in memory for the node and set the integer passed in push function as a value 
+    of the stack, and set their next and prev value to null.
+    after that as long as our prev node is existed (a or b) an its pointers are existed
+    (next an prev) we set the actual node next position to the new node we are creating
+    and we set the new node prev pointer to the actual node
 
 part 2 :
 after we initialize the stack we check if the elements of the stack are sorted or not:

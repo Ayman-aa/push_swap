@@ -117,9 +117,9 @@ then merge them toghether in stack b and then send back to stack a from the bigg
     with the elements of the stack, and then we call upon insertion_sort function that uses the insertion sort algorithm
     to sort the numbers in our array in an ascending order.
 
-3 - once we had the sorted array, we start to loop on the elements of the stack a until we reach the last element.
+3 - once we have the sorted array, we start to loop on the elements of the stack a until we reach the last element.
     we set a condition (if (range + i >= size)) ensures that we don't exceed the bounds of the array in other words
-    the condition hold our chunk until we ran out of chunks and we reach the end of elements in stack a.
+    the condition hold our chunk (the numbers within the chunk) until we ran out of chunks and we reach the end of elements in stack a.
 
 4 - 
 

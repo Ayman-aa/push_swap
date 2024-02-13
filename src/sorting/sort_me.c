@@ -6,7 +6,7 @@
 /*   By: aaamam <aaamam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 16:56:27 by aaamam            #+#    #+#             */
-/*   Updated: 2024/02/12 13:55:35 by aaamam           ###   ########.fr       */
+/*   Updated: 2024/02/13 09:08:21 by aaamam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,7 @@ void	sort_three(t_stack **a)
 		rotate_a(a, 0);
 	}
 	else if (stack_top(*a)->value < stack_top(*a)->prev->value && \
-	stack_top(*a)->prev->value > stack_bottom(*a)->value && \
-	stack_top(*a)->prev->value > stack_top(*a)->value)
+	stack_top(*a)->prev->value > stack_bottom(*a)->value)
 		reverse_rotate_a(a, 0);
 }
 

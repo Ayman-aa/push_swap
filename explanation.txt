@@ -56,12 +56,72 @@ if the elements of the stack are not sorted then we try to sort them:
 2 - if the stack size is equal to 2 , we simply run the instruction swap_a in which we swap the top element
     in the stack with the previous element in the stack. (if 2 1 then 1 2).
 
-3 - 
+3 - if the stack size is equal to 3, we call the sort_three function that takes a pointer to a pointer
+    to a stack, and in this case we consider 5 known scenarios:
+    Scenario 1: If the top element is greater than the second element and the second element is less than the third element, 
+    the elements are already in ascending order. No sorting operation is required. (if 2 1 3 then 1 2 3)
+    Scenario 2: If the top element is greater than the second element but the second element is greater than the third element,
+    a swap operation (swap_a) is performed to bring the second smallest element to the top 
+    and then a reverse rotate operation to bring the smallest to the top. (if 3 2 1 then 2 3 1 and then 1 2 3)
+    Scenario 3: If the top element is greater than the second element and the third element is greater than the second element, 
+    a rotation operation (rotate_a) is performed to bring the smallest element to the top. (if 3 1 2 then 1 2 3)
+    Scenario 4:  if the top element is less than the second element and the second element is greater than the third element
+    a swap operation (swap_a) is performed to bring the second smallest element to the top, followed by 
+    a rotation operation (rotate_a) to bring the smallest element to the top.(if 1 3 2 then 3 1 2 and then 1 2 3)
+    Scenario 5:  If the top element is less than the second element and the second element is greater than the third element
+    then we run a reverse rotate operation to bring the smallest element to the top (if 2 3 1 then 1 2 3)
 
+4 - if the stack size is equal to 4, we call the sort_four function that takes two pointers to a pointer
+    to a stack. first we try to bring the smallest element to the top and then check if the stack is sorted
+    or not after that alteration if the stack is sorted then we have finihsed the task if not we run other
+    operations to ensure that the stack is sorted.
+    we check if :
+    - the smallest element is indeed the last element (4th) then we run a reverse rotate to bring it to the top.
+    - the smallest element is right before the last element (3rd) we run a reverse rotate twice so we bring
+      the top of the stack.
+    - the smallest element is the second element then we swap it with the first one to bring it to the top.
+    once we got our smallest element at the top of the stack a we check if the stack is sorted or not, if not:
+    we run a push b function to send that smallest number to the b stack.
+    then we run sort_three fucntion to sort the 3 remaining elements in the stack a.
+    once they are sorted we bring that smallest number from b back to a with push a function.
 
+5 - if the stack size is equal to 5, we call the sort_five function that takes two pointers to a pointer
+    to a stack.
+    first we try to bring the two smallest numbers from the stack a to the stack b
+    by calling twice the smallest_to_b function that :
+    - If the smallest element is already at the top of stack A, it is directly pushed to stack B.
+    - If the smallest element is the second from the top of stack A, a swap operation (swap_a) is performed 
+      to bring it to the top, and then it's pushed to stack B.
+    - If the smallest element is the second from the bottom of stack A, 
+      two reverse rotate operations (reverse_rotate_a) are performed to bring it to the top, and then it's pushed to stack B.
+    - If the smallest element is at the bottom of stack A, a single reverse rotate operation (reverse_rotate_a) 
+      is performed to bring it to the top, and then it's pushed to stack B.
+    - If the smallest element is not in the top three positions of stack A, 
+      two rotate operations (rotate_a) are performed to bring it to the top, and then it's pushed to stack B.
+    then we sort the 3 remaining numbers in stack a with sort_three function.
+    after being sorted we push back the numbers from stack b to stack a.
 
+part 4 :
+if the stack size is greater than 5, we follow up on another sorting method, we use an diffrent approach to use 
+the insertion sorting algorithm.
+the insertion algorithm is an algorithm with time complexicity of O(n^2) so it's no use when dealing with large items.
+so the approach we're taking is to take the large stack size and split it into chunks and sort each chunk in itself 
+in an array and compare the sorted chunk in the array with the elements in the stack a.
+then merge them toghether in stack b and then send back to stack a from the biggest to the smallest.
 
+1 - we call up for sort_others function that takes parameters a and b, which are pointers to stacks, 
+    range, which is the number of elements in a chunk, and size, which is the total number of elements in the stack a.
+    we assign an array with the sorted version of the stack but in form of an array with the help of stack_to_sarray function.
 
+2 - in stack_to_sarray function we create an array with the size of the stack and then we start to fill the array
+    with the elements of the stack, and then we call upon insertion_sort function that uses the insertion sort algorithm
+    to sort the numbers in our array in an ascending order.
+
+3 - once we have the sorted array, we start to loop on the elements of the stack a until we reach the last element.
+    we set a condition (if (range + i >= size)) ensures that we don't exceed the bounds of the array in other words
+    the condition hold our chunk (the numbers within the chunk) until we ran out of chunks and we reach the end of elements in stack a.
+
+4 - 
 
 
 

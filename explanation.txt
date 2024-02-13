@@ -118,10 +118,25 @@ then merge them toghether in stack b and then send back to stack a from the bigg
     to sort the numbers in our array in an ascending order.
 
 3 - once we have the sorted array, we start to loop on the elements of the stack a until we reach the last element.
-    we set a condition (if (range + i >= size)) ensures that we don't exceed the bounds of the array in other words
-    the condition hold our chunk (the numbers within the chunk) until we ran out of chunks and we reach the end of elements in stack a.
+    we set a condition (if (range + i >= size)), This ensures the range doesn't go beyond the actual stack size. When nearing the end of a, 
+    the range adjusts dynamically to include only the remaining elements.
 
-4 - 
+4 - then We're checking if the top element in the stack is smaller or equal to the indexed element in our sorted array sarr[i],
+    if true then we push that element from stack a to stack b and rotate if there are more than 1 elements in stack b;
+
+5 - if not, we move to another condition where we check if the element we are currently pointing on in stack a, is bigger than
+    the indexed element in our sorted array, and also if that element from stack a is less or equal to the last number within our chunk
+    in the array (sarr[range + i]) if both condition are met we push that element from stack a to stack, then run another condition
+    where we check if the stack size of b is greater or equal to two  and the top element is less that the second element after it we swap them
+    to remain orther. if not we just increment the index.
+
+6 - if none of the condition are met we just rotate the the element in stack a to move to the next element of the stack
+
+7 - then we free the sorted array.
+
+part 5 :
+after all the elements of stack a are moved to stack b we loop on the stack be and we try to push all the elements from stack b back
+to stack a by pushing the bigger element first so we have a sorted stack a
 
 
 

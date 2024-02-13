@@ -138,24 +138,19 @@ part 5 :
 after all the elements of stack a are moved to stack b we loop on the stack be and we try to push all the elements from stack b back
 to stack a by pushing the bigger element first so we have a sorted stack a
 
+1 - while there are elements in stack b we call max_to_top function to bring the biggest element
+    to the top of the stack, to do that we need to know the index (location) of the element within the stack
+    for that matter we use max_index function that loop on the stack and keep incrementing an index variable
+    as soon as we reach the biggest element which would be the current element in stack b (stack_max(b) != b is no longer valid)
+    then we return the index,
 
+2 - If the index is 0, indicating that the maximum value is already at the top of the stack, the loop breaks.
+    If the index is less than or equal to half the size of the stack, the rotate_b function is called to rotate the stack in a clockwise direction.
+    If the index is greater than half the size of the stack, the reverse_rotate_b function is called to rotate the stack in a counterclockwise direction.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+final:
+after knowing wich action should we make (rotate or reverse rotate) we push the biggest element to stack a one by one
+in the end we will have sorted elements in stack a smallest at the top and the biggest at the bottom.
 
 
 

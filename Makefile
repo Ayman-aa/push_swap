@@ -1,62 +1,41 @@
-NAME	= push_swap
+FLAGS = -g -Wall -Wextra -Werror
+SRC = ./moves/push.c ./moves/swap.c ./moves/rotate.c ./moves/reverse_rotate.c \
+		push_swap.c ./utils/atol.c ./utils/fill_stack.c ./utils/input_check.c  \
+		./sorting/three.c ./sorting/stack_utils.c ./sorting/five.c ./utils/parsing.c \
+		./utils/split.c ./sorting/more.c ./sorting/stack_utils_0.c ./utils/main_utils.c \
+
+SRCB = ./moves/push.c ./moves/swap.c ./moves/rotate.c ./moves/reverse_rotate.c \
+		./bonus/checker_bonus.c ./utils/atol.c ./utils/fill_stack.c ./utils/input_check.c  \
+		./sorting/three.c ./sorting/stack_utils.c ./sorting/five.c ./utils/parsing.c \
+		./utils/split.c ./sorting/more.c ./sorting/stack_utils_0.c ./get_next_line/get_next_line.c \
+		./get_next_line/get_next_line_utils.c ./utils/main_utils.c \
+
+OBJ = $(SRC:.c=.o)
+OBJ_BONUS = $(SRCB:.c=.o)
+NAME = push_swap
 BONUS_NAME = checker
-LIBFT = libft.a
-CC		= gcc
-CFLAGS	= -Wall -Wextra -Werror
-RM		= rm -f
-INCLUDE = -I includes
-
-SRCS	= src/parsing.c src/push_swap.c \
-			src/operations/swap.c \
-			src/operations/push.c \
-			src/operations/rotate.c \
-			src/operations/reverse_rotate.c \
-			src/sorting/algo_station.c \
-			src/sorting/sort_me.c \
-			src/sorting/use_to_sort.c \
-			src/stack/behavior.c \
-			src/stack/tools.c \
-			src/stack/indexing.c \
-
-SRCSB	= src/bonus/checker_bonus.c \
-			src/operations/swap.c \
-			src/operations/push.c \
-			src/operations/rotate.c \
-			src/operations/reverse_rotate.c \
-			src/sorting/algo_station.c \
-			src/sorting/sort_me.c \
-			src/sorting/use_to_sort.c \
-			src/stack/behavior.c \
-			src/stack/tools.c \
-			src/stack/indexing.c \
-			src/parsing.c
-
-
-OBJS	= $(SRCS:.c=.o)
-OBJSB	= $(SRCSB:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	@make -C libft
-	@mv libft/libft.a .
-	@$(CC) $(CFLAGS) $(OBJS) $(INCLUDE) $(LIBFT) -o $(NAME)
+$(NAME): $(OBJ)
+	@cc $(FLAGS) $(OBJ) -o $(NAME)
+
+%.o: %.c
+	@cc $(FLAGS) -c $< -o $@
 
 bonus: $(BONUS_NAME)
 
-$(BONUS_NAME): $(OBJSB)
-	@make -C libft
-	@mv libft/libft.a .
-	@$(CC) $(CFLAGS) $(OBJSB) $(INCLUDE) $(LIBFT) -o $(BONUS_NAME)
+$(BONUS_NAME): $(OBJ_BONUS)
+	@cc $(FLAGS) $(OBJ_BONUS) -o $(BONUS_NAME)
 
-clean:	
-	@make clean -C libft
-	@$(RM) $(OBJS) $(OBJSB)
+clean:
+	@rm -rf $(OBJ) $(OBJ_BONUS)
+	@rm -rf *.o
 
 fclean: clean
-	@make fclean -C libft
-	@$(RM) $(NAME) $(BONUS_NAME) $(LIBFT)
+	@rm -rf $(NAME) $(BONUS_NAME)
 
 re: fclean all
 
 .PHONY: all clean fclean re bonus
+.SECONDARY: $(OBJ) $(OBJ_BONUS)

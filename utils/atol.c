@@ -6,7 +6,7 @@
 /*   By: aaamam <aaamam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:59:19 by aaamam            #+#    #+#             */
-/*   Updated: 2024/02/28 16:05:04 by aaamam           ###   ########.fr       */
+/*   Updated: 2024/02/28 16:15:00 by aaamam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,6 @@ long long	ft_atol(char *nptr)
 		i++;
 	}
 	if (num * sign > INT_MAX || num * sign < INT_MIN)
-		exit_with_message("Error\n");
+		ft_error();
 	return (num * sign);
 }

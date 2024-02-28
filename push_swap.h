@@ -6,7 +6,7 @@
 /*   By: aaamam <aaamam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:59:05 by aaamam            #+#    #+#             */
-/*   Updated: 2024/02/28 16:04:51 by aaamam           ###   ########.fr       */
+/*   Updated: 2024/02/28 16:17:35 by aaamam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ int					ft_strlen(char *n);
 bool				length_check(char **n);
 
 /* exit lia bwa7ed message */
-void				exit_with_message(char *s);
+void				ft_error(void);
 
 /* free lia stack dial **a */
 void				free_stack(t_stack **a);

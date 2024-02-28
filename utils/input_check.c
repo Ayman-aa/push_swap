@@ -6,7 +6,7 @@
 /*   By: aaamam <aaamam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:59:15 by aaamam            #+#    #+#             */
-/*   Updated: 2024/02/28 16:05:00 by aaamam           ###   ########.fr       */
+/*   Updated: 2024/02/28 16:15:00 by aaamam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,13 +102,13 @@ bool	input_check(int ac, int *tab, char **av)
 	{
 		free(tab);
 		free_split(av);
-		exit_with_message("Error\n");
+		ft_error();
 	}
 	if (!double_check(tab, ac))
 	{
 		free(tab);
 		free_split(av);
-		exit_with_message("Error\n");
+		ft_error();
 	}
 	if (ac < 2)
 	{

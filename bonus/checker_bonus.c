@@ -6,7 +6,7 @@
 /*   By: aaamam <aaamam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:59:49 by aaamam            #+#    #+#             */
-/*   Updated: 2024/02/28 16:05:38 by aaamam           ###   ########.fr       */
+/*   Updated: 2024/02/28 16:15:00 by aaamam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	apply_operations(t_stack **a, t_stack **b, char *line)
 	else if (ft_strncmp(line, "rrr\n", _strlen(line)) == 0)
 		rrr(a, b, 1);
 	else
-		exit_with_message("Error\n");
+		ft_error();
 }
 
 void	start_checking(t_stack **a, t_stack **b)
@@ -79,7 +79,7 @@ void	bonus_fill_stack(t_stack **a, int ac, char **av)
 	{
 		free(tab);
 		free_split(av);
-		exit_with_message("Error\n");
+		ft_error();
 	}
 	while (i >= 0)
 	{

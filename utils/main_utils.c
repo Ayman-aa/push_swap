@@ -6,16 +6,15 @@
 /*   By: aaamam <aaamam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:59:14 by aaamam            #+#    #+#             */
-/*   Updated: 2024/02/28 16:06:47 by aaamam           ###   ########.fr       */
+/*   Updated: 2024/02/28 16:17:50 by aaamam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	exit_with_message(char *s)
+void	ft_error(void)
 {
-	while (*s)
-		write(2, s++, 1);
+	write(2, "Error\n", 6);
 	exit(1);
 }
 
@@ -44,7 +43,7 @@ int	arr_n(char **arr, char **av)
 		if (av[i][j] == '\0')
 		{
 			free_split(arr);
-			exit_with_message("Error\n");
+			ft_error();
 		}
 		i++;
 	}

@@ -6,7 +6,7 @@
 /*   By: aaamam <aaamam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:59:18 by aaamam            #+#    #+#             */
-/*   Updated: 2024/02/28 16:05:02 by aaamam           ###   ########.fr       */
+/*   Updated: 2024/02/28 16:15:00 by aaamam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	*av_to_tab(int ac, char **av)
 	index->i = 0;
 	index->j = 0;
 	if (!length_check(av) || !is_valid_integer(ac, av, index))
-		exit_with_message("Error\n");
+		ft_error();
 	tab = malloc(sizeof(int *) * (ac));
 	if (!tab)
 		return (NULL);

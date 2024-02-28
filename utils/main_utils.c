@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main_utils.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aaamam <aaamam@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/28 15:59:14 by aaamam            #+#    #+#             */
+/*   Updated: 2024/02/28 16:06:47 by aaamam           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../push_swap.h"
 
@@ -41,4 +52,25 @@ int	arr_n(char **arr, char **av)
 	while (arr[i])
 		i++;
 	return (i);
+}
+
+char	*ft_strdup(const char *s1)
+{
+	size_t	i;
+	char	*dup;
+
+	i = 0;
+	while (s1[i] != '\0')
+		i++;
+	dup = (char *)malloc((i + 1) * sizeof(char));
+	if (!dup)
+		return (NULL);
+	i = 0;
+	while (s1[i])
+	{
+		dup[i] = s1[i];
+		i++;
+	}
+	dup[i] = '\0';
+	return (dup);
 }

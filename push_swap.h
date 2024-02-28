@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aaamam <aaamam@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/28 15:59:05 by aaamam            #+#    #+#             */
+/*   Updated: 2024/02/28 16:04:51 by aaamam           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
@@ -37,6 +48,7 @@ bool				integer_check(int *tab, int ac);
 bool				double_check(int *tab, int ac);
 bool				input_check(int ac, int *tab, char **av);
 bool				is_valid_integer(int ac, char **av, t_index *index);
+char				*ft_strdup(const char *s1);
 
 /* ft_split */
 int					count_strings(char const *s, char c);

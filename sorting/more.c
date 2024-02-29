@@ -6,7 +6,7 @@
 /*   By: aaamam <aaamam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:59:27 by aaamam            #+#    #+#             */
-/*   Updated: 2024/02/29 21:10:25 by aaamam           ###   ########.fr       */
+/*   Updated: 2024/02/29 21:39:52 by aaamam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void	move_max_up(t_stack **a, t_stack **b)
 {
 	int	size;
 	int	peak;
-	
+
 	size = stack_size(b);
 	peak = 0;
 	while (1)

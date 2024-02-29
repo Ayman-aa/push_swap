@@ -6,7 +6,7 @@
 /*   By: aaamam <aaamam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:59:05 by aaamam            #+#    #+#             */
-/*   Updated: 2024/02/28 16:17:35 by aaamam           ###   ########.fr       */
+/*   Updated: 2024/02/29 21:12:05 by aaamam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,7 @@ t_stack				*stack_head(t_stack **a);
 int					stack_biggest(t_stack **a);
 t_stack				*stack_smallest(t_stack **a);
 int					peak_index(t_stack **b, int peak);
+int					max_to_min(t_stack **a);
 
 /* Pb Rb to reduce lines nums*/
 void				pb_rb(t_stack **a, t_stack **b, int *i);

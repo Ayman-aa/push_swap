@@ -6,7 +6,7 @@
 /*   By: aaamam <aaamam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:59:27 by aaamam            #+#    #+#             */
-/*   Updated: 2024/02/28 16:05:14 by aaamam           ###   ########.fr       */
+/*   Updated: 2024/02/29 21:10:25 by aaamam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,8 @@ void	quick_divide_qs(t_stack **a, t_stack **b, int interval, int size)
 				sb(*b, 0);
 			i++;
 		}
+		else if (max_to_min(a) == 0)
+			rra(a, 0);
 		else
 			ra(a, 0);
 	}
@@ -65,7 +67,7 @@ void	move_max_up(t_stack **a, t_stack **b)
 {
 	int	size;
 	int	peak;
-
+	
 	size = stack_size(b);
 	peak = 0;
 	while (1)
@@ -79,4 +81,21 @@ void	move_max_up(t_stack **a, t_stack **b)
 			rrb(b, 0);
 	}
 	pa(a, b, 0);
+}
+
+int	max_to_min(t_stack **a)
+{
+	t_stack	*tmp;
+
+	if (!a || !*a)
+		return (0);
+	tmp = *a;
+	while (tmp && tmp->next != NULL)
+	{
+		if (tmp->data > tmp->next->data)
+			tmp = tmp->next;
+		else
+			return (1);
+	}
+	return (0);
 }

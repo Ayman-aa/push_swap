@@ -42,16 +42,21 @@ void	quick_divide_qs(t_stack **a, t_stack **b, int interval, int size)
 
 	i = 0;
 	s_arr = sorted_stack_array(a);
-	if (max_to_min(a) == 0)
-	{
-		while (i < size)
-		{
-			ra(a, 0);
-			i++;
-		}
-		if (sorted(a))
-			return ;
-	}
+	// print_stack(*a);
+	// if (max_to_min(a) == 0)
+	// {
+	// 	while (i < size)
+	// 	{
+	// 		rra(a, 0);
+	// 		pb(a, b, 0);
+	// 		// print_stack(*a);
+	// 		if (sorted(b))
+	// 			return ;
+	// 		i++;
+	// 	}
+		
+	// }
+	// i = 0;
 	while (*a)
 	{
 		if (interval + i >= size)

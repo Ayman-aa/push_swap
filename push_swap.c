@@ -35,8 +35,9 @@ int	main(int ac, char **av)
 	else
 	{
 		quick_divide_qs(&a, &b, find_interval(&a), stack_size(&a));
-		while (b && !sorted(&a))
+		while (b)
 			move_max_up(&a, &b);
 	}
+	// print_stack(a);
 	free_all(a, arr);
 }

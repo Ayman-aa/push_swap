@@ -6,7 +6,7 @@
 /*   By: aaamam <aaamam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:58:57 by aaamam            #+#    #+#             */
-/*   Updated: 2024/02/28 16:04:48 by aaamam           ###   ########.fr       */
+/*   Updated: 2024/03/01 21:17:57 by aaamam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	main(int ac, char **av)
 	else
 	{
 		quick_divide_qs(&a, &b, find_interval(&a), stack_size(&a));
-		while (b)
+		while (b && !sorted(&a))
 			move_max_up(&a, &b);
 	}
 	free_all(a, arr);

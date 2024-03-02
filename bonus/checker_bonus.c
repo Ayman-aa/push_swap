@@ -107,6 +107,8 @@ int	main(int ac, char **av)
 	arr_num = arr_n(arr, av);
 	bonus_fill_stack(&a, arr_num, arr);
 	start_checking(&a, &b);
+	if (ac < 2)
+		return 0;
 	if (sorted(&a) == 1 && !b)
 		write(1, "OK\n", 3);
 	else

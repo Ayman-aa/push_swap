@@ -6,7 +6,7 @@
 /*   By: aaamam <aaamam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:59:27 by aaamam            #+#    #+#             */
-/*   Updated: 2024/03/01 21:17:04 by aaamam           ###   ########.fr       */
+/*   Updated: 2024/03/02 08:50:03 by aaamam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	quick_divide_qs(t_stack **a, t_stack **b, int interval, int size)
 	// 		rra(a, 0);
 	// 		pb(a, b, 0);
 	// 		// print_stack(*a);
-	// 		if (sorted(b))
+	// 		if (sorted(a))
 	// 			return ;
 	// 		i++;
 	// 	}

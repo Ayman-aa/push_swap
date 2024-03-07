@@ -96,6 +96,8 @@ void	bonus_fill_stack(t_stack **a, int ac, char **av)
 
 int	main(int ac, char **av)
 {
+	if (ac < 2)
+		return 0;
 	t_stack	*a;
 	t_stack	*b;
 	int		arr_num;
@@ -107,13 +109,11 @@ int	main(int ac, char **av)
 	arr_num = arr_n(arr, av);
 	bonus_fill_stack(&a, arr_num, arr);
 	start_checking(&a, &b);
-	if (ac < 2)
-		return 0;
 	if (sorted(&a) == 1 && !b)
 		write(1, "OK\n", 3);
 	else
 		write(1, "KO\n", 3);
-	free_stack(&a);
+	free_all(a, arr);
 	if (b)
 		free_stack(&b);
 	return (0);
